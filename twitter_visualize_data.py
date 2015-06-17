@@ -1,5 +1,5 @@
 
-#Import the necessary methods from tweepy library
+# Visualize Twitter Sentiment, Language and Location data
 
 import pandas as pd
 from tweepy.streaming import StreamListener
@@ -13,7 +13,7 @@ from pylab import *
 
 if __name__ == '__main__':
 
-	#Twitter authetification and the connection to Twitter Streaming API
+	# Connection to Twitter Streaming API
 	auth = OAuthHandler(consumer_key, consumer_secret)
 	auth.set_access_token(access_token, access_token_secret)
 	api = API(auth)

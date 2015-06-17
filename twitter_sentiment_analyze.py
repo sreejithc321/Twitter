@@ -1,3 +1,5 @@
+# Analyze sentiment on Twitter Streaming data
+
 import json
 from textblob import TextBlob
 from tweepy.streaming import StreamListener
