@@ -8,6 +8,5 @@
 
 ### Configuration
 
-- config.py : Store Twitter connection credentials
-              Set Search Keyword and tweet count here
+- config.py : Store Twitter connection credentials and set Search Keyword and tweet count here
 
