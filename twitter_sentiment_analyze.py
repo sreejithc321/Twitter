@@ -15,12 +15,11 @@ class TweetStreamListener(StreamListener):
     # on success
     def on_data(self, data):
 	
-		# decode json
+	# decode json
     	dict_data = json.loads(data)
-
         if dict_data.get('text', {}):
 		
-			# Get tweet text
+			# get tweet text
 			tweet = TextBlob(dict_data["text"])
 		
 			# output sentiment polarity
