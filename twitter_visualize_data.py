@@ -10,7 +10,6 @@ import json
 from textblob import TextBlob
 from pylab import *
 
-
 if __name__ == '__main__':
 
 	# Connection to Twitter Streaming API
@@ -19,7 +18,7 @@ if __name__ == '__main__':
 	api = API(auth)
 	tweets_file = api.search(q=SEARCH_KEYWORD, count= TWEET_COUNT)
     
-    # Sentiment Analysis
+        # Sentiment Analysis
 	pos = net = neg = 0
 	for t in tweets_file:
 		tweet = TextBlob(t.text)
@@ -33,7 +32,7 @@ if __name__ == '__main__':
 		print '\n'
 	print len(tweets_file)
 	
-    # Plot Sentiment	
+        # Plot Sentiment	
 	figure(1, figsize=(8,8))
 	labels = 'Positive', 'Negative', 'Neutral'
 	fracs = [pos,neg,net]
@@ -42,7 +41,7 @@ if __name__ == '__main__':
 	title(' Sentiment Analysis of \' ' + SEARCH_KEYWORD+' \' ', bbox={'facecolor':'0.6', 'pad':5})
 	show()
 
-    # Language
+        # Language
 	tweets = pd.DataFrame()
 	tweets['lang'] = map(lambda tweet: tweet.lang, tweets_file)
 	tweets_by_lang = tweets['lang'].value_counts()

@@ -1,43 +1,35 @@
 
 # Analyze sentiment on Twitter Streaming data
-
 import json
 from textblob import TextBlob
 from tweepy.streaming import StreamListener
 from tweepy import OAuthHandler
 from tweepy import Stream
-
 # Add twitter keys and tokens
 from config import *
 
 class TweetStreamListener(StreamListener):
-
     # on success
     def on_data(self, data):
-	
-		# decode json
+	# decode json
     	dict_data = json.loads(data)
-
         if dict_data.get('text', {}):
-		
-			# Get tweet text
-			tweet = TextBlob(dict_data["text"])
-		
-			# output sentiment polarity
-			print "Tweet : ", tweet
-			print "Polarity : ",tweet.sentiment.polarity
-		
-			# determine if sentiment is positive, negative, or neutral
-			if tweet.sentiment.polarity < 0:
-				sentiment = "Negative"
-			elif tweet.sentiment.polarity == 0:
-				sentiment = "Neutral"
-			else:
-				sentiment = "Positive"
-						
-			# output sentiment
-			print "Sentiment : ",sentiment
-			print "\n"
+		# get tweet text
+		tweet = TextBlob(dict_data["text"])
+		# output sentiment polarity
+		print "Tweet : ", tweet
+		print "Polarity : ",tweet.sentiment.polarity
+		# determine if sentiment is positive, negative, or neutral
+		if tweet.sentiment.polarity < 0:
+			sentiment = "Negative"
+		elif tweet.sentiment.polarity == 0:
+			sentiment = "Neutral"
+		else:
+			sentiment = "Positive"
+				
+		# output sentiment
+		print "Sentiment : ",sentiment
+		print "\n"
 		    
         return True
 
