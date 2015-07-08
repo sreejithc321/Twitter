@@ -5,7 +5,7 @@
 - TextBlob : https://github.com/sloria/TextBlob
 - Tweepy : https://github.com/tweepy/tweepy
 - PyLab : http://wiki.scipy.org/PyLab
-- Twitter : 
+- Twitter : https://pypi.python.org/pypi/python-twitter/1.3.1
 
 ### Configuration
 
